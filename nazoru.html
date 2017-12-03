@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+.main {
+    position: relative;
+}
+
+#tehon, #diff, #blur, #filter {
+    background-color: black;
+}
+
+#tehon {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+#nazoru {
+    position: absolute;    
+    left: 0px;
+    top: 0px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="main">
+<!-- <img src="no.png" id="tehon"> -->
+<img src="data:image/png;base64,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" id="tehon">
+<canvas width="256" height="256" id="nazoru"></canvas>
+&nbsp;<span id="hantei"></span>
+<br class="clear">
+</div>
+<br>
+
+<canvas width="256" height="256" id="diff"></canvas>
+<canvas width="256" height="256" id="blur"></canvas>
+<canvas width="256" height="256" id="filter"></canvas>
+
+<script type="text/javascript" src="fft.js"></script>
+<script type="text/javascript" src="blur.js"></script>
+<script type="text/javascript">
+
+var tehonImg = document.getElementById("tehon");
+var hanteiElm = document.getElementById("hantei");
+
+function getContext(id) {
+    return document.getElementById(id).getContext("2d");
+}
+var nazoruCtx = getContext("nazoru");
+var diffCtx = getContext("diff");
+var blurCtx = getContext("blur");
+var filterCtx = getContext("filter");
+
+var needsUpdate = true;
+
+
+function nazoruDraw(x, y) {
+    nazoruCtx.beginPath();
+    nazoruCtx.arc(x, y, 25, 0, 2*Math.PI, false);
+    nazoruCtx.closePath();
+    nazoruCtx.fillStyle = "#0f0";
+    nazoruCtx.fill();
+    needsUpdate = true;
+}
+
+function onMouseDown(e) {
+    nazoruCtx.canvas.addEventListener("mousemove", onMouseMove, false);
+    document.addEventListener("mouseup", onMouseUp, false);
+    nazoruDraw(e.offsetX, e.offsetY);
+}
+
+function onMouseMove(e) {
+    nazoruDraw(e.offsetX, e.offsetY);
+}
+
+function onMouseUp(e) {
+    nazoruCtx.canvas.removeEventListener("mousemove", onMouseMove, false);
+    document.removeEventListener("mouseup", onMouseUp, false);
+}
+
+nazoruCtx.canvas.addEventListener("mousedown", onMouseDown, false);
+
+
+function diff() {
+    diffCtx.clearRect(0, 0, 256, 256);
+
+    diffCtx.globalCompositeOperation = "source-copy";
+    diffCtx.drawImage(tehonImg, 0, 0);
+
+    diffCtx.globalCompositeOperation = "xor";
+    diffCtx.drawImage(nazoruCtx.canvas, 0, 0);
+}
+
+function blur() {
+    var imageData = diffCtx.getImageData(0, 0, 256, 256);
+    imageData = gaussianblur_fft(imageData, 20, 256, 256);
+    blurCtx.putImageData(imageData, 0, 0);
+    return imageData;
+}
+
+function hantei() {
+    diff();
+
+    var imageData = blur();
+    var data = imageData.data;
+
+    var nazoreta = true;
+    var hamideta = false;
+    for (var i = 0, n = 256*256*4; i < n; i += 4) {
+        if (data[i+3] < 178) {
+            data[i+3] = 0;
+        } else {
+            nazoreta = false;
+            if (data[i] == 0) {
+                hamideta = true;
+            }
+        }
+    }
+    filterCtx.putImageData(imageData, 0, 0);
+    hanteiElm.innerText = hamideta ? "はみ出たよ！" :
+                          nazoreta ? "なぞれたよっ！" : "なぞってくださーい";
+}
+
+function animationFrame() {
+    if (needsUpdate) {
+        hantei();
+        needsUpdate = false;
+    }
+    window.requestAnimationFrame(animationFrame);
+}
+window.requestAnimationFrame(animationFrame);
+
+</script>
+</body>
+</html>
